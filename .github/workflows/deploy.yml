@@ -13,12 +13,13 @@ jobs:
       - name: Checkout StudyKotlin
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2  # 최근 2개 커밋만 가져오기 (변경 파일 확인을 위해)
+          fetch-depth: 2  # 최근 2개 커밋만 가져오기 (변경 파일 확인)
 
       - name: Get Changed Files
         id: changed-files
         run: |
-          echo "CHANGED_FILES=$(git diff --name-only HEAD^ HEAD)" >> $GITHUB_ENV
+          git diff --name-only HEAD^ HEAD | jq -R -s -c 'split("\n")[:-1]' > changed_files.json
+          cat changed_files.json
 
       - name: Clone kgh Repository
         env:
@@ -29,9 +30,9 @@ jobs:
       - name: Copy Changed Files to kgh
         run: |
           cd kgh-repo
+          CHANGED_FILES=$(jq -r '.[]' ../changed_files.json)
           for file in $CHANGED_FILES; do
-            mkdir -p "$(dirname "$file")"
-            cp -r ../"$file" "$file"
+            [ -f "../$file" ] && mkdir -p "$(dirname "$file")" && cp -r "../$file" "$file"
           done
 
       - name: Commit and Push to kgh
@@ -42,5 +43,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Sync changes from StudyKotlin [$(date +'%Y-%m-%d %H:%M:%S')]"
+          git commit -m "Sync changes from StudyKotlin [$(date +'%Y-%m-%d %H:%M:%S')]" || exit 0
           git push origin main
