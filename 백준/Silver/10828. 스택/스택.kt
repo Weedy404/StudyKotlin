@@ -4,7 +4,7 @@ import java.util.*
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`));
     val bw = BufferedWriter(OutputStreamWriter(System.out));
-    val deque = LinkedList<Int>();
+    val stack = LinkedList<Int>();
     val N = br.readLine().toInt();
     val result = StringBuilder();
 
@@ -12,11 +12,11 @@ fun main() {
         val order = br.readLine().split(" ");
 
         when (order[0]) {
-            "push" -> deque.addLast(order[1].toInt());
-            "pop" -> result.append(if (deque.isEmpty()) "-1\n" else "${deque.pollLast()}\n");
-            "size" -> result.append(deque.size).append("\n");
-            "empty" -> result.append(if (deque.isEmpty()) "1\n" else "0\n");
-            "top" -> result.append(deque.peekLast()?.toString() ?: "-1").append("\n");
+            "push" -> stack.addLast(order[1].toInt());
+            "pop" -> result.append(if (stack.isEmpty()) "-1\n" else "${stack.pollLast()}\n");
+            "size" -> result.append(stack.size).append("\n");
+            "empty" -> result.append(if (stack.isEmpty()) "1\n" else "0\n");
+            "top" -> result.append(stack.peekLast()?.toString() ?: "-1").append("\n");
         }
 
     }
