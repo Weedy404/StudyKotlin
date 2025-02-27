@@ -13,41 +13,22 @@ jobs:
       - name: Checkout StudyKotlin
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2  # 최근 2개 커밋만 가져오기 (변경 파일 확인)
+          fetch-depth: 2
 
-      - name: Get Changed Files
-        id: changed-files
+      - name: Clone StudyKotlin repo
         run: |
-          git diff --name-only HEAD^ HEAD | jq -R -s -c 'split("\n")[:-1]' > changed_files.json
-          cat changed_files.json
-
-      - name: Clone kgh Repository
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+          # GitHub Actions에서 기본적으로 작업 디렉토리로 체크아웃됨
+          git clone --mirror https://github.com/Weedy404/StudyKotlin.git kgh-repo
+          
+      - name: Debug clone directory
         run: |
-          git clone https://Weedy404:${GH_PAT}@github.com/StudyPS/kgh.git kgh-repo
+          # kgh-repo 디렉토리가 생성되었는지 확인
+          ls -al
 
-      - name: Copy Changed Files to kgh
-        run: |
-          cd kgh-repo
-          CHANGED_FILES=$(jq -r '.[]' ../changed_files.json)
-          for file in $CHANGED_FILES; do
-            [ -f "../$file" ] && mkdir -p "$(dirname "$file")" && cp -r "../$file" "$file"
-          done
-
-      - name: Commit and Push to kgh
+      - name: Push to kgh
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           cd kgh-repo
-          if [ ! -d ".git" ]; then
-            git init
-            git remote add origin https://Weedy404:${GH_PAT}@github.com/StudyPS/kgh.git
-            git checkout -b main
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Sync changes from StudyKotlin [$(date +'%Y-%m-%d %H:%M:%S')]" || exit 0
-          git push -u origin main
-
+          git remote add kgh https://Weedy404:${GH_PAT}@github.com/StudyPS/kgh.git
+          git push --force kgh main
