@@ -12,19 +12,35 @@ jobs:
     steps:
       - name: Checkout StudyKotlin
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # 최근 2개 커밋만 가져오기 (변경 파일 확인을 위해)
 
-      - name: Push to kgh
+      - name: Get Changed Files
+        id: changed-files
+        run: |
+          echo "CHANGED_FILES=$(git diff --name-only HEAD^ HEAD)" >> $GITHUB_ENV
+
+      - name: Clone kgh Repository
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git clone --mirror https://github.com/Weedy404/StudyKotlin.git repo
-          cd repo
-          git remote add kgh https://Weedy404:${GH_PAT}@github.com/StudyPS/kgh.git
-          git push --force kgh main
+          git clone https://Weedy404:${GH_PAT}@github.com/StudyPS/kgh.git kgh-repo
 
-      - name: Debug GH_PAT
+      - name: Copy Changed Files to kgh
+        run: |
+          cd kgh-repo
+          for file in $CHANGED_FILES; do
+            mkdir -p "$(dirname "$file")"
+            cp -r ../"$file" "$file"
+          done
+
+      - name: Commit and Push to kgh
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          echo "GH_PAT length: ${#GH_PAT}"
-          echo "First 4 chars of GH_PAT: ${GH_PAT:0:4}****"
+          cd kgh-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Sync changes from StudyKotlin [$(date +'%Y-%m-%d %H:%M:%S')]"
+          git push origin main
