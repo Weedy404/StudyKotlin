@@ -40,8 +40,14 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           cd kgh-repo
+          if [ ! -d ".git" ]; then
+            git init
+            git remote add origin https://Weedy404:${GH_PAT}@github.com/StudyPS/kgh.git
+            git checkout -b main
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "Sync changes from StudyKotlin [$(date +'%Y-%m-%d %H:%M:%S')]" || exit 0
-          git push origin main
+          git push -u origin main
+
