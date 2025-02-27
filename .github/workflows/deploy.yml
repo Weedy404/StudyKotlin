@@ -1,0 +1,21 @@
+name: Deploy to kgh
+
+on:
+  push:
+    branches:
+      - main  # StudyKotlin의 main 브랜치에서만 작동
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout StudyKotlin
+        uses: actions/checkout@v4
+
+      - name: Push to kgh
+        run: |
+          git clone --mirror https://github.com/Weedy404/StudyKotlin.git repo
+          cd repo
+          git remote add kgh https://github.com/StudyPS/kgh.git
+          git push --force kgh main
