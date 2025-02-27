@@ -1,10 +1,13 @@
-import java.io.*
-import java.util.*
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.io.BufferedWriter
+import java.io.OutputStreamWriter
+import java.util.LinkedList
 
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`));
     val bw = BufferedWriter(OutputStreamWriter(System.out));
-    val stack = LinkedList<Int>();
+    val queue = LinkedList<Int>();
     val N = br.readLine().toInt();
     val result = StringBuilder();
 
@@ -12,11 +15,11 @@ fun main() {
         val order = br.readLine().split(" ");
 
         when (order[0]) {
-            "push" -> stack.addLast(order[1].toInt());
-            "pop" -> result.append(if (stack.isEmpty()) "-1\n" else "${stack.pollLast()}\n");
-            "size" -> result.append(stack.size).append("\n");
-            "empty" -> result.append(if (stack.isEmpty()) "1\n" else "0\n");
-            "top" -> result.append(stack.peekLast()?.toString() ?: "-1").append("\n");
+            "push" -> queue.addLast(order[1].toInt());
+            "pop" -> result.append(if (queue.isEmpty()) "-1\n" else "${queue.pollLast()}\n");
+            "size" -> result.append(queue.size).append("\n");
+            "empty" -> result.append(if (queue.isEmpty()) "1\n" else "0\n");
+            "top" -> result.append(queue.peekLast()?.toString() ?: "-1").append("\n");
         }
 
     }
