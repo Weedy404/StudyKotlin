@@ -21,3 +21,10 @@ jobs:
           cd repo
           git remote add kgh https://Weedy404:${GH_PAT}@github.com/StudyPS/kgh.git
           git push --force kgh main
+
+      - name: Debug GH_PAT
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          echo "GH_PAT length: ${#GH_PAT}"
+          echo "First 4 chars of GH_PAT: ${GH_PAT:0:4}****"
