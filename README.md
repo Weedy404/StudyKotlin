@@ -1,5 +1,7 @@
 ## 소스코드 링크
 
+<br>
+
 ### 1. Data Structure
 
 |순번|문제 번호|문제 이름|난이도|풀이 링크|
@@ -15,6 +17,7 @@
 |008|1966|<a href="https://www.acmicpc.net/problem/1966" target="_blank">프린터 큐</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/8.svg"/>|<a href="https://github.com/StudyPS/kgh/blob/main/%EB%B0%B1%EC%A4%80/Silver/1966.%E2%80%85%ED%94%84%EB%A6%B0%ED%84%B0%E2%80%85%ED%81%90/%ED%94%84%EB%A6%B0%ED%84%B0%E2%80%85%ED%81%90.kt" target="_blank">코드 보기</a>|
 |009|1874|<a href="https://www.acmicpc.net/problem/1874" target="_blank">스택 수열</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/>|<a href="https://github.com/StudyPS/kgh/blob/main/%EB%B0%B1%EC%A4%80/Silver/1874.%E2%80%85%EC%8A%A4%ED%83%9D%E2%80%85%EC%88%98%EC%97%B4/%EC%8A%A4%ED%83%9D%E2%80%85%EC%88%98%EC%97%B4.kt" target="_blank">코드 보기</a>|
 
+<br>
 
 ### 2. Data Structure2
 
@@ -31,6 +34,7 @@
 |008|21942|<a href="https://www.acmicpc.net/problem/21942" target="_blank">부품 대여장</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/14.svg"/>|<a href="https://github.com/StudyPS/kgh/blob/main/%EB%B0%B1%EC%A4%80/Gold/21942.%E2%80%85%EB%B6%80%ED%92%88%E2%80%85%EB%8C%80%EC%97%AC%EC%9E%A5/%EB%B6%80%ED%92%88%E2%80%85%EB%8C%80%EC%97%AC%EC%9E%A5.kt" target="_blank">코드 보기</a>|
 |009|21944|<a href="https://www.acmicpc.net/problem/21944" target="_blank">문제 추천 시스템 Version 2</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/14.svg"/>|<a href="https://github.com/StudyPS/kgh/blob/main/%EB%B0%B1%EC%A4%80/Gold/21944.%E2%80%85%EB%AC%B8%EC%A0%9C%E2%80%85%EC%B6%94%EC%B2%9C%E2%80%85%EC%8B%9C%EC%8A%A4%ED%85%9C%E2%80%85Version%E2%80%852/%EB%AC%B8%EC%A0%9C%E2%80%85%EC%B6%94%EC%B2%9C%E2%80%85%EC%8B%9C%EC%8A%A4%ED%85%9C%E2%80%85Version%E2%80%852.kt" target="_blank">코드 보기</a>|
 
+<br>
 
 ### 3. Tree
 
@@ -46,3 +50,11 @@
 |007|20924|<a href="https://www.acmicpc.net/problem/20924" target="_blank">트리의 기둥과 가지</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/12.svg"/>||
 |008|5639|<a href="https://www.acmicpc.net/problem/5639" target="_blank">이진 검색 트리</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/12.svg"/>||
 |009|1967|<a href="https://www.acmicpc.net/problem/1967" target="_blank">트리의 지름</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/12.svg"/>||
+
+<br>
+
+### 0. Etc.
+
+|순번|문제 번호|문제 이름|난이도|풀이 링크|
+|:--:|:--:|:--:|:--:|:--:|
+|000|2696|<a href="https://www.acmicpc.net/problem/2696" target="_blank">중앙값 구하기</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/14.svg"/>|<a href="https://github.com/StudyPS/kgh/blob/main/%EB%B0%B1%EC%A4%80/Gold/2696.%E2%80%85%EC%A4%91%EC%95%99%EA%B0%92%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0/%EC%A4%91%EC%95%99%EA%B0%92%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0.kt" target="_blank">코드 보기</a>|
