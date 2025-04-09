@@ -41,7 +41,7 @@
 |순번|문제 번호|문제 이름|난이도|풀이 링크|
 |:--:|:--:|:--:|:--:|:--:|
 |000|6416|<a href="https://www.acmicpc.net/problem/6416" target="_blank">트리인가?</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/0.svg"/>|<a href="https://github.com/StudyPS/kgh/blob/main/%EB%B0%B1%EC%A4%80/Unrated/6416.%E2%80%85%ED%8A%B8%EB%A6%AC%EC%9D%B8%EA%B0%80%EF%BC%9F/%ED%8A%B8%EB%A6%AC%EC%9D%B8%EA%B0%80%EF%BC%9F.kt" target="_blank">코드 보기</a>|
-|001|11725|<a href="https://www.acmicpc.net/problem/11725" target="_blank">트리의 부모 찾기</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/>||
+|001|11725|<a href="https://www.acmicpc.net/problem/11725" target="_blank">트리의 부모 찾기</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/>|<a href="https://github.com/StudyPS/kgh/blob/main/%EB%B0%B1%EC%A4%80/Silver/11725.%E2%80%85%ED%8A%B8%EB%A6%AC%EC%9D%98%E2%80%85%EB%B6%80%EB%AA%A8%E2%80%85%EC%B0%BE%EA%B8%B0/%ED%8A%B8%EB%A6%AC%EC%9D%98%E2%80%85%EB%B6%80%EB%AA%A8%E2%80%85%EC%B0%BE%EA%B8%B0.kt" target="_blank">코드 보기</a>|
 |002|14675|<a href="https://www.acmicpc.net/problem/14675" target="_blank">단절점과 단절선</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/10.svg"/>||
 |003|1991|<a href="https://www.acmicpc.net/problem/1991" target="_blank">트리 순회</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/10.svg"/>||
 |004|9934|<a href="https://www.acmicpc.net/problem/9934" target="_blank">완전 이진 트리</a>|<img height="25px" width="25px" src="https://static.solved.ac/tier_small/10.svg"/>||
